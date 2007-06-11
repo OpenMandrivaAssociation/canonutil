@@ -1,9 +1,9 @@
-%define		extraversion %nil	
+%define		extraversion %nil
 
 Summary: 	Maintenance tool for Canon inkjet printers
 Name: 		canonutil
 Version: 	0.07
-Release: 	%mkrel 2
+Release: 	%mkrel 3
 License: 	GPL
 Group: 		Graphics
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
@@ -23,7 +23,6 @@ CanonUtil does all needed maintenance tasks for Canon inkjet printers:
 - Nozzle adjustment
 - Printer reset
 - Power saving control
-
 
 %prep
 rm -rf ${RPM_BUILD_DIR}/%{name}-%{version}%{extraversion}
