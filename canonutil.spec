@@ -75,14 +75,15 @@ install -d $RPM_BUILD_ROOT%{_datadir}/icons/large
 install -m 644 canonutil_large.png $RPM_BUILD_ROOT%{_datadir}/icons/large/canonutil.png
 
 # menu stuff
-install -d $RPM_BUILD_ROOT%{_menudir}
-cat <<EOF > %buildroot/%_menudir/canonutil
-?package(canonutil):command="/usr/bin/CanonUtil" \
-title="CanonUtil" \
-longtitle="Maintenance tool for Canon inkjet printers" \
-needs="x11" \
-section="Configuration/Printing" \
-icon="canonutil.png"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-canonutil.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/CanonUtil
+Name=CanonUtil
+Comment=Maintenance tool for Canon inkjet printers
+Categories=HardwareSettings;
+Icon=canonutil
 EOF
 
 %post
@@ -101,7 +102,7 @@ rm -fr %buildroot
 # when started by a normal user
 %attr(2755,lp,sys) %_bindir/CanonUtil
 %_libdir/CanonUtil
-%_menudir/*
+%{_datadir}/applications/mandriva-*.desktop
 %_datadir/icons/*.png
 %_datadir/icons/mini/*.png
 %_datadir/icons/large/*.png
