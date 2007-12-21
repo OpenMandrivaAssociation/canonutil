@@ -12,6 +12,7 @@ URL: 		http://xwtools.automatix.de/
 BuildRequires: 	libfltk-devel libMesaGLU-devel
 BuildRequires:  ImageMagick
 Prefix: 	%{_prefix}
+BuildRoot: 	%{_tmppath}/%{name}-buildroot
 ExclusiveArch:  %{ix86}
 
 %description
