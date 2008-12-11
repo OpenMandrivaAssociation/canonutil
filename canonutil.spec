@@ -10,7 +10,7 @@ Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
 Source1:	canonutil.png.bz2
 URL: 		http://xwtools.automatix.de/
 BuildRequires: 	libfltk-devel mesaglu-devel
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 Prefix: 	%{_prefix}
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 ExclusiveArch:  %{ix86}
