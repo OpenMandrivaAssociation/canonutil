@@ -8,6 +8,7 @@ License: 	GPL
 Group: 		Graphics
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
 Source1:	canonutil.png.bz2
+Patch0:		canonuti-0.07-fltk-1.1.patch
 URL: 		http://xwtools.automatix.de/
 BuildRequires: 	libfltk-devel mesaglu-devel
 BuildRequires:  imagemagick
@@ -25,10 +26,8 @@ CanonUtil does all needed maintenance tasks for Canon inkjet printers:
 - Power saving control
 
 %prep
-rm -rf ${RPM_BUILD_DIR}/%{name}-%{version}%{extraversion}
-rm -rf ${RPM_BUILD_DIR}/%{name}
-
 %setup -q -n CanonUtil-%{version}%{extraversion}
+%patch0 -p1
 bzcat %{SOURCE1} > icon.png
 
 # Fix path for help file
