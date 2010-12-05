@@ -3,7 +3,7 @@
 Summary: 	Maintenance tool for Canon inkjet printers
 Name: 		canonutil
 Version: 	0.07
-Release: 	%mkrel 6
+Release: 	%mkrel 7
 License: 	GPL
 Group: 		Graphics
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
