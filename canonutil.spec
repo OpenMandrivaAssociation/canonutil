@@ -60,8 +60,6 @@ perl -p -i -e 's/chown/:/' Makefile
 
 %makeinstall install-fltk
 
-%find_lang %{name}
-
 # icons
 install -d %{buildroot}%{_datadir}/icons
 install -m 644 canonutil.png %{buildroot}%{_datadir}/icons/
@@ -82,7 +80,7 @@ Categories=HardwareSettings;
 Icon=canonutil
 EOF
 
-%files -f %{name}.lang
+%files
 %doc CHANGES.txt LICENCE.txt README
 # This should run SGID sys, so that it can access the printer device files
 # when started by a normal user
