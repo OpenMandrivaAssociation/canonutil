@@ -3,17 +3,16 @@
 Summary: 	Maintenance tool for Canon inkjet printers
 Name: 		canonutil
 Version: 	0.07
-Release: 	%mkrel 7
+Release: 	8
 License: 	GPL
 Group: 		Graphics
+URL: 		http://xwtools.automatix.de/
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
 Source1:	canonutil.png.bz2
 Patch0:		canonuti-0.07-fltk-1.1.patch
-URL: 		http://xwtools.automatix.de/
-BuildRequires: 	libfltk-devel mesaglu-devel
+BuildRequires: 	libfltk-devel
+BuildRequires:	mesaglu-devel
 BuildRequires:  imagemagick
-Prefix: 	%{_prefix}
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 ExclusiveArch:  %{ix86}
 
 %description
@@ -38,7 +37,6 @@ perl -p -i -e 's:CanonUtil.html:/usr/lib/CanonUtil/CanonUtil.html:' CanonUtilFlt
 #fi
 
 %build
-
 ./configure --prefix /usr
 
 %make fltk
@@ -49,8 +47,6 @@ convert icon.png -resize 16x16 canonutil_mini.png
 convert icon.png -resize 48x48 canonutil_large.png
 
 %install
-
-rm -fr %buildroot
 install -d %{buildroot}%{_bindir}
 install -d %{buildroot}%{_libdir}
 
@@ -67,15 +63,15 @@ perl -p -i -e 's/chown/:/' Makefile
 %find_lang %{name}
 
 # icons
-install -d $RPM_BUILD_ROOT%{_datadir}/icons
-install -m 644 canonutil.png $RPM_BUILD_ROOT%{_datadir}/icons/
-install -d $RPM_BUILD_ROOT%{_datadir}/icons/mini
-install -m 644 canonutil_mini.png $RPM_BUILD_ROOT%{_datadir}/icons/mini/canonutil.png
-install -d $RPM_BUILD_ROOT%{_datadir}/icons/large
-install -m 644 canonutil_large.png $RPM_BUILD_ROOT%{_datadir}/icons/large/canonutil.png
+install -d %{buildroot}%{_datadir}/icons
+install -m 644 canonutil.png %{buildroot}%{_datadir}/icons/
+install -d %{buildroot}%{_datadir}/icons/mini
+install -m 644 canonutil_mini.png %{buildroot}%{_datadir}/icons/mini/canonutil.png
+install -d %{buildroot}%{_datadir}/icons/large
+install -m 644 canonutil_large.png %{buildroot}%{_datadir}/icons/large/canonutil.png
 
 # menu stuff
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+mkdir -p %{buildroot}%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-canonutil.desktop
 [Desktop Entry]
 Type=Application
@@ -86,27 +82,14 @@ Categories=HardwareSettings;
 Icon=canonutil
 EOF
 
-%if %mdkversion < 200900
-%post
-%update_menus
-%endif
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%endif
-
-%clean
-rm -fr %buildroot
-
 %files -f %{name}.lang
-%defattr(-,root,root,-)
 %doc CHANGES.txt LICENCE.txt README
 # This should run SGID sys, so that it can access the printer device files
 # when started by a normal user
 %attr(2755,lp,sys) %_bindir/CanonUtil
-%_libdir/CanonUtil
+%{_libdir}/CanonUtil
 %{_datadir}/applications/mandriva-*.desktop
-%_datadir/icons/*.png
-%_datadir/icons/mini/*.png
-%_datadir/icons/large/*.png
+%{_datadir}/icons/*.png
+%{_datadir}/icons/mini/*.png
+%{_datadir}/icons/large/*.png
+
