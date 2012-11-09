@@ -1,0 +1,81 @@
+Only in CanonUtil-0.07/fltk: CanonUtilFltk
+diff -u -r --exclude='*~' --exclude='*.o' CanonUtil-0.07.orig/fltk/CanonUtilFltkHtmlWin.cpp CanonUtil-0.07/fltk/CanonUtilFltkHtmlWin.cpp
+--- CanonUtil-0.07.orig/fltk/CanonUtilFltkHtmlWin.cpp	2008-12-13 16:00:11.000000000 +0100
++++ CanonUtil-0.07/fltk/CanonUtilFltkHtmlWin.cpp	2008-12-13 16:01:54.000000000 +0100
+@@ -1,9 +1,9 @@
+ #include <FL/Fl.H>
+ #include <FL/Fl_Window.H>
+ #include <FL/Fl_Box.H>
+-#include <FL/Fl_Help_View.h>
+-#include <FL/Fl_Button.h>
+-#include <FL/Fl_Choice.h>
++#include <FL/Fl_Help_View.H>
++#include <FL/Fl_Button.H>
++#include <FL/Fl_Choice.H>
+ #include <FL/Fl_Shared_Image.H>
+ 
+ #include "CanonUtilGlobal.h"
+diff -u -r --exclude='*~' --exclude='*.o' CanonUtil-0.07.orig/fltk/CanonUtilFltkMsg.cpp CanonUtil-0.07/fltk/CanonUtilFltkMsg.cpp
+--- CanonUtil-0.07.orig/fltk/CanonUtilFltkMsg.cpp	2008-12-13 16:00:12.000000000 +0100
++++ CanonUtil-0.07/fltk/CanonUtilFltkMsg.cpp	2008-12-13 16:02:54.000000000 +0100
+@@ -4,7 +4,7 @@
+ #include <stdio.h>
+ #include <FL/Fl_Window.H>
+ #include <FL/Fl_Box.H>
+-#include <FL/Fl_Button.h>
++#include <FL/Fl_Button.H>
+ #include <FL/Fl_Box.H>
+ #include <FL/Fl_Choice.H>
+ #include "CanonUtilGlobal.h"
+diff -u -r --exclude='*~' --exclude='*.o' CanonUtil-0.07.orig/fltk/CanonUtilFltkPref.cpp CanonUtil-0.07/fltk/CanonUtilFltkPref.cpp
+--- CanonUtil-0.07.orig/fltk/CanonUtilFltkPref.cpp	2008-12-13 16:00:11.000000000 +0100
++++ CanonUtil-0.07/fltk/CanonUtilFltkPref.cpp	2008-12-13 16:02:37.000000000 +0100
+@@ -12,7 +12,7 @@
+ 
+ #include <FL/Fl_Window.H>
+ #include <FL/Fl_Box.H>
+-#include <FL/Fl_Button.h>
++#include <FL/Fl_Button.H>
+ #include <FL/Fl_Choice.H>
+ #include "CanonUtilFltkUtil.h"
+ #include "CanonUtilFltkMw.h"
+diff -u -r --exclude='*~' --exclude='*.o' CanonUtil-0.07.orig/fltk/CanonUtilFltkTime.cpp CanonUtil-0.07/fltk/CanonUtilFltkTime.cpp
+--- CanonUtil-0.07.orig/fltk/CanonUtilFltkTime.cpp	2008-12-13 16:00:10.000000000 +0100
++++ CanonUtil-0.07/fltk/CanonUtilFltkTime.cpp	2008-12-13 16:03:15.000000000 +0100
+@@ -10,8 +10,8 @@
+ 
+ #include <FL/Fl_Window.H>
+ #include <FL/Fl_Box.H>
+-#include <FL/Fl_Button.h>
+-#include <FL/Fl_Choice.h>
++#include <FL/Fl_Button.H>
++#include <FL/Fl_Choice.H>
+ #include <FL/Fl_Int_Input.H>
+ #include "CanonUtilFltkUtil.h"
+ #include "CanonUtilFltkMsg.h"
+diff -u -r --exclude='*~' --exclude='*.o' CanonUtil-0.07.orig/fltk/CanonUtilFltkUtil.cpp CanonUtil-0.07/fltk/CanonUtilFltkUtil.cpp
+--- CanonUtil-0.07.orig/fltk/CanonUtilFltkUtil.cpp	2008-12-13 16:00:11.000000000 +0100
++++ CanonUtil-0.07/fltk/CanonUtilFltkUtil.cpp	2008-12-13 16:01:16.000000000 +0100
+@@ -3,7 +3,7 @@
+  */
+ 
+ #include <FL/Fl.H>
+-#include <FL/Fl_Widget.h>
++#include <FL/Fl_Widget.H>
+ #include <FL/fl_draw.H>
+ 
+ void getTextSize(Fl_Widget *wi, int *W, int *H)
+diff -u -r --exclude='*~' --exclude='*.o' CanonUtil-0.07.orig/fltk/main.cpp CanonUtil-0.07/fltk/main.cpp
+--- CanonUtil-0.07.orig/fltk/main.cpp	2008-12-13 16:00:10.000000000 +0100
++++ CanonUtil-0.07/fltk/main.cpp	2008-12-13 16:02:17.000000000 +0100
+@@ -6,8 +6,8 @@
+ 
+ #include <FL/Fl.H>
+ #include <FL/fl_draw.H>
+-#include <FL/Fl_Button.h>
+-#include <FL/Fl_Choice.h>
++#include <FL/Fl_Button.H>
++#include <FL/Fl_Choice.H>
+ #include <stdio.h>
+ #include <string.h>
+ #include <pref.h>
