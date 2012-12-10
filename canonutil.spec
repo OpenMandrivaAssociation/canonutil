@@ -91,3 +91,58 @@ EOF
 %{_datadir}/icons/mini/*.png
 %{_datadir}/icons/large/*.png
 
+
+
+%changelog
+* Fri Jun 15 2012 Matthew Dawkins <mattydaw@mandriva.org> 0.07-8
++ Revision: 805866
+- rebuild for fltk libs
+- cleaned up spec
+
+* Sun Dec 05 2010 Oden Eriksson <oeriksson@mandriva.com> 0.07-7mdv2011.0
++ Revision: 610095
+- rebuild
+
+* Thu Sep 10 2009 Thierry Vignaud <tv@mandriva.org> 0.07-6mdv2010.0
++ Revision: 436930
+- rebuild
+
+* Sat Dec 13 2008 Funda Wang <fwang@mandriva.org> 0.07-5mdv2009.1
++ Revision: 313960
+- add patch fixing build with fltk 1.1
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.07-5mdv2009.0
++ Revision: 243434
+- rebuild
+- fix mesaglu-devel BR
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+  + Olivier Blin <blino@mandriva.org>
+    - restore BuildRoot
+
+* Tue Dec 18 2007 Thierry Vignaud <tv@mandriva.org> 0.07-3mdv2008.1
++ Revision: 132878
+- auto-convert XDG menu entry
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Marcelo Ricardo Leitner <mrl@mandriva.com>
+    - Rebuilt.
+    - Import canonutil
+
+
+
+
+* Thu Jan 19 2006 Till Kamppeter <till@mandriva.com> 0.07-2mdk
+- Does not work on 64-bit -> Added "ExclusiveArch: %%{ix_86}".
+- Introduced %%mkrel.
+
+* Sun Nov 28 2003 Till Kamppeter <till@mandrakesoft.com> 0.07-1mdk
+- Updated to version 0.07.
+
+* Fri Sep 12 2003 Till Kamppeter <till@mandrakesoft.com> 0.03-1mdk
+- Initial release.
