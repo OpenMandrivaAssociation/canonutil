@@ -3,7 +3,7 @@
 Summary: 	Maintenance tool for Canon inkjet printers
 Name: 		canonutil
 Version: 	0.07
-Release: 	8
+Release: 	9
 License: 	GPL
 Group: 		Graphics
 URL: 		http://xwtools.automatix.de/
