@@ -3,15 +3,15 @@
 Summary: 	Maintenance tool for Canon inkjet printers
 Name: 		canonutil
 Version: 	0.07
-Release: 	9
+Release: 	10
 License: 	GPL
 Group: 		Graphics
 URL: 		http://xwtools.automatix.de/
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
 Source1:	canonutil.png.bz2
 Patch0:		canonuti-0.07-fltk-1.1.patch
-BuildRequires: 	libfltk-devel
-BuildRequires:	mesaglu-devel
+BuildRequires: 	fltk-devel
+BuildRequires:	glu-devel
 BuildRequires:  imagemagick
 ExclusiveArch:  %{ix86}
 
@@ -32,9 +32,9 @@ bzcat %{SOURCE1} > icon.png
 # Fix path for help file
 perl -p -i -e 's:CanonUtil.html:/usr/lib/CanonUtil/CanonUtil.html:' CanonUtilFltkMw.cpp
 
-#if [ -d /usr/lib64 ]; then
-#  perl -p -i -e 's:lib:lib64:' configure
-#fi
+if [ -d /usr/lib64 ]; then
+  perl -p -i -e 's:lib:lib64:' configure
+fi
 
 %build
 ./configure --prefix /usr
