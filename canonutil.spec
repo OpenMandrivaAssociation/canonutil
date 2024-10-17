@@ -6,7 +6,7 @@ Version: 	0.07
 Release: 	10
 License: 	GPL
 Group: 		Graphics
-URL: 		http://xwtools.automatix.de/
+URL: 		https://xwtools.automatix.de/
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
 Source1:	canonutil.png.bz2
 Patch0:		canonuti-0.07-fltk-1.1.patch
