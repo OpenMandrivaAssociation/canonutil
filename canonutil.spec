@@ -10,6 +10,11 @@ URL: 		https://xwtools.automatix.de/
 Source0: 	CanonUtil-%{version}%{extraversion}.tar.bz2
 Source1:	canonutil.png.bz2
 Patch0:		canonuti-0.07-fltk-1.1.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: 	fltk-devel
 BuildRequires:	glu-devel
 BuildRequires:  imagemagick
